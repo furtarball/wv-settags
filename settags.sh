@@ -30,6 +30,7 @@ done
 for i in *.wv;
 	do printf "Track ${i::-3} title: " &&
 	read title &&
+	wvtag -q -w "Title=$title" "$i" &&
 	mv "$i" "${i::-3} – $title.wv";
 done
 
